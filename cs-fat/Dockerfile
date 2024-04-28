@@ -1,6 +1,6 @@
-FROM tomcat:10-jdk17
+FROM tomcat:10-jre17
 
-ENV APP=cs-fat
+ENV APP=ROOT
 
 EXPOSE 8080
 
@@ -38,7 +38,7 @@ RUN unzip $CATALINA_HOME/webapps/$APP.war -d webapps/$APP
 RUN rm $CATALINA_HOME/webapps/$APP.war
 RUN rm $CATALINA_HOME/webapps/$APP/WEB-INF/classes/application.properties
 COPY ./application.properties $CATALINA_HOME/webapps/$APP/WEB-INF/classes/application.properties
-RUN sed -i -e "s/<base href=\"\/\"\/>/<base href=\"\/$APP\/\" \/>/" ./webapps/$APP/WEB-INF/classes/static/*.html
+# RUN sed -i -e "s/<base href=\"\/\"\/>/<base href=\"\/$APP\/\" \/>/" ./webapps/$APP/WEB-INF/classes/static/*.html
 
 # copy other resources
 WORKDIR /opt/install

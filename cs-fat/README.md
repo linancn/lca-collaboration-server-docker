@@ -20,9 +20,6 @@ port:
 
 ```bash
 docker run -p 8080:8080 \
-   -v ./data:/data \
-   -v ./data/tomcat/conf-ROOT:/usr/local/tomcat/conf/Catalina/localhost/ROOT \
-   -v ./data/tomcat/work-ROOT:/usr/local/tomcat/work/Catalina/localhost/ROOT \
    --rm -it cs-fat
 ```
 
