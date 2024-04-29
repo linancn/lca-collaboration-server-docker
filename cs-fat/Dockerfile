@@ -8,6 +8,8 @@ RUN apt-get update
 RUN apt-get -y install unzip xz-utils libaio1 libnuma-dev libncurses5 sudo
 
 RUN mkdir -p /opt/install
+RUN mkdir -p /opt/collab/lib
+RUN mkdir -p /opt/collab/git
 WORKDIR /opt/install
 
 # install MySQL
